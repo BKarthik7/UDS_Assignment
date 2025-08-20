@@ -1,5 +1,8 @@
 # UDS Assignment
 
+[![Storybook](https://img.shields.io/badge/Storybook-UI%20Components-ff4785?logo=storybook)](https://68a602b9cd4dbfefc9e9e03c-yuljtwukcm.chromatic.com/)
+[![Vercel](https://img.shields.io/badge/Live%20Demo-Vercel-black?logo=vercel)](https://uds-assignment-beta.vercel.app/)
+
 ## Setup Instructions
 
 1. Install dependencies:
