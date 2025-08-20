@@ -1,4 +1,4 @@
-import '../src/index.css'; // Your global CSS (ensure this imports tailwindcss if used)
+import '../src/index.css';
 import '../src/components/Page/InputFieldPage.css';
 import '../src/components/Page/DataTablePage.css';
 import type { Preview } from '@storybook/react-vite'

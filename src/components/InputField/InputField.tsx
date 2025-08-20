@@ -16,6 +16,7 @@ export interface InputFieldProps {
   clearable?: boolean;
   passwordToggle?: boolean;
   className?: string;
+  id?: string;
 }
 
 const sizeClasses = {
@@ -46,20 +47,25 @@ export const InputField: React.FC<InputFieldProps> = ({
   clearable,
   passwordToggle,
   className,
+  id,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
+
+  // Generate a unique id if not provided
+  const inputId = id ?? React.useId();
 
   const inputType = passwordToggle ? (showPassword ? 'text' : 'password') : type;
 
   return (
     <div className={`flex flex-col gap-1 ${className ?? ''}`}>
       {label && (
-        <label className="font-medium text-gray-700 mb-1">
+        <label className="font-medium text-gray-700 mb-1" htmlFor={inputId}>
           {label}
         </label>
       )}
       <div className="relative flex items-center">
         <input
+          id={inputId}
           type={inputType}
           value={value}
           onChange={onChange}

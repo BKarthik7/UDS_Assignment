@@ -1,6 +1,7 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import DataTable, { type Column } from './DataTable';
+import DataTable, { Column } from './DataTable';
 
 interface User {
   id: number;
@@ -41,7 +42,7 @@ describe('DataTable', () => {
   it('sorts columns when header clicked', () => {
     render(<DataTable data={data} columns={columns} />);
     fireEvent.click(screen.getByRole('button', { name: /Sort by Name/i }));
-    // After sort, Alice should be first
+
     const rows = screen.getAllByRole('row');
     expect(rows[1]).toHaveTextContent('Alice');
   });

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import DataTable, { type DataTableProps, type Column } from './DataTable';
+import DataTable from './DataTable';
+import type { DataTableProps, Column } from './DataTable';
 
 interface User {
   id: number;

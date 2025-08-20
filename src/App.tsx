@@ -1,14 +1,14 @@
 import './App.css'
 import { useState } from 'react'
 import InputField from './components/InputField/InputField'
-import DataTable, { type Column } from './components/DataTable/DataTable'
+import DataTable from './components/DataTable/DataTable'
+import type { Column } from './components/DataTable/DataTable'
 import Tabs from './components/Tabs/Tabs'
 
 function App() {
   const [value, setValue] = useState('')
   const [password, setPassword] = useState('')
 
-  // Use User type and columns/data from tests
   type User = {
     id: number;
     name: string;

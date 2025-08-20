@@ -1,5 +1,6 @@
 import React from 'react';
-import DataTable, { type Column } from '../DataTable/DataTable';
+import DataTable from '../DataTable/DataTable';
+import type { Column } from '../DataTable/DataTable';
 import './DataTablePage.css';
 
 type User = {

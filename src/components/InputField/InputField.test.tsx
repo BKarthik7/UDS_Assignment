@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
+import React from 'react';
 import InputField from './InputField';
 
 describe('InputField', () => {
@@ -39,10 +40,11 @@ describe('InputField', () => {
   });
 
   it('toggles password visibility', () => {
-    render(<InputField passwordToggle type="password" />);
+    render(<InputField passwordToggle type="password" label="Password" />);
     const button = screen.getByRole('button');
-    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'password');
+    const input = screen.getByLabelText('Password');
+    expect(input).toHaveAttribute('type', 'password');
     fireEvent.click(button);
-    expect(screen.getByRole('textbox')).toHaveAttribute('type', 'text');
+    expect(input).toHaveAttribute('type', 'text');
   });
 });

@@ -17,7 +17,6 @@ const config: StorybookConfig = {
     "options": {}
   },
   viteFinal(config) {
-    // Ensure PostCSS (for Tailwind) is enabled
     config.css = config.css || {};
     config.css.postcss = require('postcss');
     return config;
