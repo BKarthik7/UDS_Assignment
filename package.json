@@ -10,7 +10,6 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_6f95192e59e369d",
     "test": "jest"
   },
   "dependencies": {

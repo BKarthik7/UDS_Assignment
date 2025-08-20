@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+/* Light theme variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #222;
+  --primary-color: #007bff;
+  /* ...other variables... */
+}
+
+/* Dark theme overrides */
+.dark {
+  --bg-color: #18181b;
+  --text-color: #e5e7eb;
+  --primary-color: #2563eb;
+  /* ...other variables... */
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  /* ...existing code... */
+}
+
+/* Update components to use variables if needed */
+/* ...existing code... */

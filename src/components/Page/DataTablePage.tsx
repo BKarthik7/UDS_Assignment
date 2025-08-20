@@ -2,6 +2,7 @@ import React from 'react';
 import DataTable from '../DataTable/DataTable';
 import type { Column } from '../DataTable/DataTable';
 import './DataTablePage.css';
+import { userColumns, userData } from '../../data/userData';
 
 type User = {
   id: number;
@@ -10,16 +11,9 @@ type User = {
   age: number;
 };
 
-const columns: Column<User>[] = [
-  { key: 'name', title: 'Name', dataIndex: 'name', sortable: true },
-  { key: 'email', title: 'Email', dataIndex: 'email', sortable: true },
-  { key: 'age', title: 'Age', dataIndex: 'age', sortable: true },
-];
+const columns: Column<User>[] = userColumns;
 
-const data: User[] = [
-  { id: 1, name: 'Alice', email: 'alice@example.com', age: 24 },
-  { id: 2, name: 'Bob', email: 'bob@example.com', age: 30 },
-];
+const data: User[] = userData;
 
 export const DataTablePage: React.FC = () => (
   <article className="datatable-page-root">

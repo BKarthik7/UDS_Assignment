@@ -1,7 +1,8 @@
-import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
-import DataTable, { Column } from './DataTable';
+import DataTable from './DataTable';
+import type { Column } from './DataTable';
+import { userColumns, userData } from '../../data/userData';
 
 interface User {
   id: number;
@@ -10,16 +11,9 @@ interface User {
   age: number;
 }
 
-const columns: Column<User>[] = [
-  { key: 'name', title: 'Name', dataIndex: 'name', sortable: true },
-  { key: 'email', title: 'Email', dataIndex: 'email', sortable: true },
-  { key: 'age', title: 'Age', dataIndex: 'age', sortable: true },
-];
+const columns: Column<User>[] = userColumns;
 
-const data: User[] = [
-  { id: 1, name: 'Alice', email: 'alice@example.com', age: 24 },
-  { id: 2, name: 'Bob', email: 'bob@example.com', age: 30 },
-];
+const data: User[] = userData;
 
 describe('DataTable', () => {
   it('renders table headers and data', () => {

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import DataTable from './DataTable';
 import type { DataTableProps, Column } from './DataTable';
+import { userColumns, userData } from '../../data/userData';
 
 interface User {
   id: number;
@@ -10,17 +11,9 @@ interface User {
   age: number;
 }
 
-const columns: Column<User>[] = [
-  { key: 'name', title: 'Name', dataIndex: 'name', sortable: true },
-  { key: 'email', title: 'Email', dataIndex: 'email', sortable: true },
-  { key: 'age', title: 'Age', dataIndex: 'age', sortable: true },
-];
+const columns: Column<User>[] = userColumns;
 
-const data: User[] = [
-  { id: 1, name: 'Alice', email: 'alice@example.com', age: 24 },
-  { id: 2, name: 'Bob', email: 'bob@example.com', age: 30 },
-  { id: 3, name: 'Charlie', email: 'charlie@example.com', age: 28 },
-];
+const data: User[] = userData;
 
 const meta: Meta<DataTableProps<User>> = {
   title: 'Components/DataTable',
@@ -55,7 +48,7 @@ export const Empty: Story = {
 
 export const Selectable: Story = {
   render: (args) => {
-    const [selected, setSelected] = useState<User[]>([]);
+    const [ _ , setSelected] = useState<User[]>([]);
     return (
       <DataTable
         {...args}

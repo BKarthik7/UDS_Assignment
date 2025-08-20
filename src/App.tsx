@@ -1,13 +1,15 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import InputField from './components/InputField/InputField'
 import DataTable from './components/DataTable/DataTable'
 import type { Column } from './components/DataTable/DataTable'
 import Tabs from './components/Tabs/Tabs'
+import { userColumns, userData } from './data/userData'
 
 function App() {
   const [value, setValue] = useState('')
   const [password, setPassword] = useState('')
+  const [darkMode, setDarkMode] = useState(false);
 
   type User = {
     id: number;
@@ -16,19 +18,22 @@ function App() {
     age: number;
   };
 
-  const columns: Column<User>[] = [
-    { key: 'name', title: 'Name', dataIndex: 'name', sortable: true },
-    { key: 'email', title: 'Email', dataIndex: 'email', sortable: true },
-    { key: 'age', title: 'Age', dataIndex: 'age', sortable: true },
-  ];
+  const columns: Column<User>[] = userColumns;
 
-  const data: User[] = [
-    { id: 1, name: 'Alice', email: 'alice@example.com', age: 24 },
-    { id: 2, name: 'Bob', email: 'bob@example.com', age: 30 },
-  ];
+  const data: User[] = userData;
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+  }, [darkMode]);
 
   return (
     <>
+      <button
+        onClick={() => setDarkMode((prev) => !prev)}
+        style={{ position: 'fixed', top: 16, right: 16, zIndex: 1000 }}
+      >
+        {darkMode ? 'Light Mode' : 'Dark Mode'}
+      </button>
       <div className="flex flex-col items-center justify-center h-screen bg-gray-100 gap-8">
         <h1 className="text-4xl font-bold">Hello World</h1>
         <div className="w-full max-w-xl">
