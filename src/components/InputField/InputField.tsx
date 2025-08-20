@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './InputField.css';
 
 export interface InputFieldProps {
   value?: string;

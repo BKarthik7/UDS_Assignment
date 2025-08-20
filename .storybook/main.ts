@@ -15,6 +15,12 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  viteFinal(config) {
+    // Ensure PostCSS (for Tailwind) is enabled
+    config.css = config.css || {};
+    config.css.postcss = require('postcss');
+    return config;
+  },
 };
 export default config;

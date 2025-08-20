@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import InputField from '../InputField/InputField';
+import './InputFieldPage.css';
 
 export const InputFieldPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   return (
-    <article style={{ padding: 32, maxWidth: 400 }}>
+    <article className="inputfield-page-root">
       <h2>InputField Component Demo</h2>
-      <div style={{ marginBottom: 24 }}>
+      <div>
         <InputField
           label="Username"
           placeholder="Enter your username"
@@ -19,7 +20,7 @@ export const InputFieldPage: React.FC = () => {
           clearable
         />
       </div>
-      <div style={{ marginBottom: 24 }}>
+      <div>
         <InputField
           label="Password"
           placeholder="Enter your password"
@@ -33,7 +34,7 @@ export const InputFieldPage: React.FC = () => {
           errorMessage={password.length < 6 && password.length > 0 ? "Password too short" : undefined}
         />
       </div>
-      <div style={{ marginBottom: 24 }}>
+      <div>
         <InputField
           label="Disabled"
           placeholder="Can't type here"
@@ -42,7 +43,7 @@ export const InputFieldPage: React.FC = () => {
           size="lg"
         />
       </div>
-      <div style={{ marginBottom: 24 }}>
+      <div>
         <InputField
           label="Loading"
           placeholder="Loading input"
