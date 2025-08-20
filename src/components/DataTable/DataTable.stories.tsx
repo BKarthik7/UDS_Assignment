@@ -69,3 +69,20 @@ export const Sortable: Story = {
     columns,
   },
 };
+
+export const DarkMode: Story = {
+  render: (args) => (
+    <div className="dark" style={{
+      background: 'var(--bg-color)',
+      color: 'var(--text-color)',
+      padding: 32,
+      borderRadius: 12,
+    }}>
+      <DataTable {...args} />
+    </div>
+  ),
+  args: {
+    data,
+    columns,
+  },
+};

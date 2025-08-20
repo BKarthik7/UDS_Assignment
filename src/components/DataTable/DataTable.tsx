@@ -80,8 +80,21 @@ export function DataTable<T extends { [key: string]: any }>({
   }
 
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="min-w-full bg-white rounded shadow" aria-label="Data Table">
+    <div
+      className="overflow-x-auto w-full"
+      style={{
+        background: 'var(--bg-color)',
+        color: 'var(--text-color)',
+      }}
+    >
+      <table
+        className="min-w-full rounded shadow"
+        aria-label="Data Table"
+        style={{
+          background: 'var(--bg-color)',
+          color: 'var(--text-color)',
+        }}
+      >
         <thead>
           <tr>
             {selectable && (

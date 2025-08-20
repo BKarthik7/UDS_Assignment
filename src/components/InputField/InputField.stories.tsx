@@ -112,3 +112,25 @@ export const PasswordToggle: Story = {
     size: 'md',
   },
 };
+
+export const DarkMode: Story = {
+  render: (args) => (
+    <div className="dark" style={{
+      background: 'var(--bg-color)',
+      color: 'var(--text-color)',
+      padding: 32,
+      borderRadius: 12,
+      maxWidth: 400,
+    }}>
+      <InputField {...args} />
+    </div>
+  ),
+  args: {
+    label: 'Username',
+    placeholder: 'Enter your username',
+    helperText: 'This is your unique username.',
+    variant: 'outlined',
+    size: 'md',
+    clearable: true,
+  },
+};

@@ -5,8 +5,16 @@ import './InputFieldPage.css';
 export const InputFieldPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
-    <article className="inputfield-page-root">
+    <article className={`inputfield-page-root${darkMode ? ' dark' : ''}`}>
+      <button
+        onClick={() => setDarkMode((prev) => !prev)}
+        style={{ position: 'absolute', top: 16, right: 16, zIndex: 1000 }}
+      >
+        {darkMode ? 'Light Mode' : 'Dark Mode'}
+      </button>
       <h2>InputField Component Demo</h2>
       <div>
         <InputField

@@ -13,6 +13,10 @@
   --bg-color: #18181b;
   --text-color: #e5e7eb;
   --primary-color: #2563eb;
+  --header-bg: #23232a;
+  --header-text: #fafafa;
+  --input-bg: #23232a;
+  --input-placeholder: #a1a1aa;
   /* ...other variables... */
 }
 
@@ -20,6 +24,38 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   /* ...existing code... */
+}
+
+/* Placeholder color for InputField */
+input::placeholder,
+textarea::placeholder {
+  color: var(--input-placeholder, #888);
+  opacity: 1;
+}
+
+/* Headers use header variables */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--header-text, var(--text-color));
+  background: transparent;
+}
+
+/* Input background for dark mode */
+.dark input,
+.dark textarea {
+  background: var(--input-bg, #23232a);
+  color: var(--text-color);
+}
+
+/* Table header background for dark mode */
+.dark th {
+  background: var(--header-bg, #23232a);
+  color: var(--header-text, #fafafa);
+}
+
+/* Table background for dark mode */
+.dark table {
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* Update components to use variables if needed */

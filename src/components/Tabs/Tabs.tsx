@@ -14,7 +14,13 @@ function Tabs({ tabs }: TabsProps) {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="flex flex-col h-[600px] bg-transparent">
+    <div
+      className="tabs-root flex flex-col h-[600px] bg-transparent"
+      style={{
+        background: 'var(--bg-color)',
+        color: 'var(--text-color)',
+      }}
+    >
       <div className="flex border-b mb-4 shrink-0">
         {tabs.map((tab, idx) => (
           <button

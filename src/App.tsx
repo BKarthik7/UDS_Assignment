@@ -34,15 +34,27 @@ function App() {
       >
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
-      <div className="flex flex-col items-center justify-center h-screen bg-gray-100 gap-8">
-        <h1 className="text-4xl font-bold">Hello World</h1>
+      <div
+        className="flex flex-col items-center justify-center h-screen gap-8"
+        style={{
+          background: 'var(--bg-color)',
+          color: 'var(--text-color)',
+        }}
+      >
+        <h1 className="text-4xl font-bold">Assignment - Front-End</h1>
         <div className="w-full max-w-xl">
           <Tabs
             tabs={[
               {
                 label: 'Inputs',
                 content: (
-                  <div className="bg-white rounded shadow p-6">
+                  <div
+                    className="rounded shadow p-6"
+                    style={{
+                      background: 'var(--bg-color)',
+                      color: 'var(--text-color)',
+                    }}
+                  >
                     <h2 className="text-2xl font-semibold mb-4">Existing Inputs</h2>
                     <div className="w-80 mb-4">
                       <InputField
@@ -94,7 +106,13 @@ function App() {
               {
                 label: 'DataTable',
                 content: (
-                  <div className="bg-white rounded shadow p-6">
+                  <div
+                    className="rounded shadow p-6"
+                    style={{
+                      background: 'var(--bg-color)',
+                      color: 'var(--text-color)',
+                    }}
+                  >
                     <h2 className="text-2xl font-semibold mb-4">DataTable</h2>
                     <div className="mb-8">
                       <h3 className="font-bold mb-2">Basic</h3>

@@ -57,7 +57,13 @@ export const InputField: React.FC<InputFieldProps> = ({
   const inputType = passwordToggle ? (showPassword ? 'text' : 'password') : type;
 
   return (
-    <div className={`flex flex-col gap-1 ${className ?? ''}`}>
+    <div
+      className={`input-field-root ${className ?? ''}`}
+      style={{
+        background: 'var(--bg-color)',
+        color: 'var(--text-color)',
+      }}
+    >
       {label && (
         <label className="font-medium text-gray-700 mb-1" htmlFor={inputId}>
           {label}
