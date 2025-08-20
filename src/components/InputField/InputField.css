@@ -1,0 +1,17 @@
+.inputfield-label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.inputfield-helper {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.inputfield-error {
+  font-size: 0.75rem;
+  color: #ef4444;
+}
+
+/* Add more custom styles as needed */

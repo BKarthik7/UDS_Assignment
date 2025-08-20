@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import InputField from './components/InputField'
+import InputField from './components/InputField/InputField'
 
 function App() {
   const [value, setValue] = useState('')
